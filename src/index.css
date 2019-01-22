@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Oswald');
 
-
-
 body {
   margin: 0;
   padding: 0;
@@ -12,8 +10,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
 
 
 code {

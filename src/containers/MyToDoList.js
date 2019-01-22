@@ -8,8 +8,19 @@ const NewToDoForm = (props) =>(
     <button onClick = {props.onSubmit}>Add Task</button>
   </div>     
 )
-const Container = styled.div
+const Container = styled.div`
+  background: blueviolet;
+  margin: 0 auto;
+  max-width : 600px;
+  padding : 20px;
+  border-radius : 5px;
+  border-style : dashed;
+  margin-top : 15px;
+`
+const Header  = styled.h1`
 
+
+`
 
 
 export default class MyToDoList extends Component
@@ -37,7 +48,6 @@ static defaultProps = {
     const list = tasks;
     // list.push(draft);
     list.push({text : draft, done: false});
-    
     this.setState({tasks : list, draft : ''});
   }
 
@@ -51,9 +61,8 @@ static defaultProps = {
     const title = this.props.title;
     const {tasks, draft} = this.state;
     return(
-      
-      <div>
-        <h1>{title}</h1>
+      <Container>
+        <Header>{title}</Header>
           {/* {tasks.map(t=> <div><p>{ t}</p></div>)} */}
           {/* {tasks.map(t => <ToDoItem task={t}/>)} */}
           {tasks.map(task => <ToDoItem text={task.text} done={task.done}/>)}
@@ -63,14 +72,8 @@ static defaultProps = {
           onSubmit={this.addTask}
           draft={draft}
         />
-        {/* <ToDoForm 
-          onChange={this.updateDraft}
-          onSubmit={this.addTask}
-          draft={draft}
-        />              */}
         <button onClick={this.removeAll} >Delete</button>
-      </div>
-      
+      </Container>
       )
   }
 }
