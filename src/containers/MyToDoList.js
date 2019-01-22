@@ -8,7 +8,8 @@ const NewToDoForm = (props) =>(
     <button onClick = {props.onSubmit}>Add Task</button>
   </div>     
 )
-const Container = styled.div``
+const Container = styled.div
+
 
 
 export default class MyToDoList extends Component
